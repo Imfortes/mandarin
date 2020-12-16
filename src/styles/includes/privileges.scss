@@ -1,0 +1,54 @@
+.privileges-wrapper {
+  height: 1200px;
+  background-image: url('../images/japanese.jpg');
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+  background-size: contain;
+}
+
+.privileges {
+  padding-top: 150px;
+  @include flex-center;
+  flex-direction: column;
+
+  &__title {
+    margin-bottom: 150px;
+  }
+
+  &__list {
+    width: 920px;
+    @include flex-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    &-item {
+      width: 45%;
+      @include flex-start;
+      flex-direction: row;
+      margin-bottom: 100px;
+
+      &-description {
+        width: 325px;
+        margin-left: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+
+        & h4 {
+          font-size: 16px;
+          line-height: 22px;
+          font-weight: 400;
+        }
+
+        & span {
+          font-size: 14px;
+          line-height: 22px;
+          font-weight: 400;
+          color: $text-color-grey;
+        }
+      }
+    }
+  }
+}

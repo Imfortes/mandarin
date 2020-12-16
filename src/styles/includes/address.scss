@@ -1,0 +1,20 @@
+@import "../mixins/mixins";
+@import "../mixins/_variables";
+
+.address {
+  height: 520px;
+  @include flex-between;
+
+  &__description {
+    width: 43%;
+    height: 100%;
+    background-color: #F4F8FB;
+  }
+
+  &__map {
+    width: 57%;
+    height: 100%;
+    background-image: url('../images/map.jpg');
+  }
+
+}

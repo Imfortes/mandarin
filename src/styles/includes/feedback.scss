@@ -1,0 +1,73 @@
+@import "../mixins/mixins";
+@import "../mixins/_variables";
+
+.feedback-wrapper {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.feedback {
+  padding: 35px 0px;
+  width: 1250px;
+  height: 360px;
+  @include flex-around;
+  flex-direction: column;
+  border: 5px solid $border-feedback;
+  position: relative;
+
+  &__title {
+    max-width: 480px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 500;
+
+    & strong {
+      font-size: 22px;
+    }
+  }
+
+  &__description {
+
+  }
+
+  &__buttons {
+    @include flex-center;
+    flex-direction: row;
+
+    & a {
+      @include flex-center;
+      width: 300px;
+      height: 56px;
+      margin: 0 20px;
+      -webkit-border-radius: 28px;
+      -moz-border-radius: 28px;
+      border-radius: 28px;
+      border: 1px solid $border-color;
+      background-color: $checkbox-color;
+      color: $text-color-grey;
+      text-decoration: none;
+      transition: all .5s;
+
+      &:hover {
+        -webkit-box-shadow: 1px 1px 15px 0px rgba(240, 134, 4, 0.7);
+        -moz-box-shadow:    1px 1px 15px 0px rgba(240, 134, 4, 0.7);
+        box-shadow:         1px 1px 15px 0px rgba(240, 134, 4, 0.7);
+        background-color: $main-color-focus;
+        color: #ffffff;
+      }
+    }
+  }
+
+  &__details {
+    width: 280px;
+    font-size: 14px;
+    line-height: 18px;
+    color: $text-color-orange;
+    position: absolute;
+    text-decoration: underline;
+    bottom: -12px;
+    left: calc(50% - 140px);
+    cursor: pointer;
+  }
+}

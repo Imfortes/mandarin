@@ -1,0 +1,49 @@
+html,
+body {
+  min-width: 400px;
+  width: 100vw;
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
+  color: #252831;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  transition: all .5s;
+}
+
+.header-wrapper,
+.ideal-course,
+.courses-wrapper,
+.results-wrapper,
+.feedback-wrapper,
+.privileges-wrapper,
+.address,
+.footer-wrapper {
+  width: 100vw;
+}
+
+.header,
+.ideal-course__title,
+.courses,
+.results,
+.feedback,
+.privileges,
+.footer {
+  max-width: 1400px;
+  margin: 0 auto;
+}

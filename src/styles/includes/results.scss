@@ -1,0 +1,43 @@
+@import "../mixins/mixins";
+@import "../mixins/_variables";
+
+.results {
+  position: relative;
+  margin: 80px auto;
+  height: 200px;
+  flex-direction: column;
+  border-top: 1px solid $results-border-color;
+  border-bottom: 1px solid $results-border-color;
+
+  &__title {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+    position: absolute;
+    top: -12px;
+    left: calc(50% - 130px);
+    text-align: center;
+  }
+
+  &__list {
+    @include flex-center;
+    height: 100%;
+
+    &-item {
+      margin: 0 100px;
+      flex-direction: column;
+      @include flex-center;
+
+      &-title {
+        font-size: 46px;
+        line-height: 62px;
+      }
+
+      &-descr {
+        font-size: 16px;
+        line-height: 22px;
+        color: $text-color-grey;
+      }
+    }
+  }
+}
