@@ -22,13 +22,21 @@
     line-height: 22px;
     font-weight: 500;
 
+    @media screen and (max-width: 880px) {
+      font-size: 14px;
+    }
+
     & strong {
       font-size: 22px;
     }
   }
 
   &__description {
+    text-align: center;
 
+    @media screen and (max-width: 880px) {
+      width: 200px;
+    }
   }
 
   &__buttons {
@@ -48,6 +56,14 @@
       color: $text-color-grey;
       text-decoration: none;
       transition: all .5s;
+
+      @media screen and (max-width: 880px) {
+        width: 200px;
+      }
+
+      @media screen and (max-width: 600px) {
+        width: 175px;
+      }
 
       &:hover {
         -webkit-box-shadow: 1px 1px 15px 0px rgba(240, 134, 4, 0.7);

@@ -4,17 +4,108 @@
 .address {
   height: 520px;
   @include flex-between;
+  background-color: #F4F8FB;
 
   &__description {
     width: 43%;
-    height: 100%;
-    background-color: #F4F8FB;
+    height: 80%;
+    padding: 75px 150px;
+    @include flex-between;
+    flex-direction: column;
+    align-items: flex-start;
+    color: $address-color;
+
+    @media screen and (max-width: 1400px) {
+      padding: 75px 100px;
+    }
+
+    @media screen and (max-width: 1100px) {
+      padding: 75px 0px;
+      align-items: center;
+    }
+
+    @media screen and (max-width: 800px) {
+      width: 50%;
+    }
+
+    &-title {
+      font-size: 22px;
+      line-height: 30px;
+
+      @media screen and (max-width: 800px) {
+        font-size: 20px;
+      }
+    }
+
+    &-adr {
+      font-size: 16px;
+      line-height: 22px;
+
+      @media screen and (max-width: 800px) {
+        font-size: 14px;
+      }
+    }
+
+    &-mail {
+      text-decoration: none;
+      color: $text-color-grey;
+
+      @media screen and (max-width: 800px) {
+        font-size: 14px;
+      }
+
+      &:hover {
+        color: $text-color-orange;
+      }
+    }
+
+    &-phone {
+      font-size: 28px;
+      line-height: 38px;
+      color: $text-color-grey;
+
+      @media screen and (max-width: 1300px) {
+        font-size: 22px;
+      }
+
+      @media screen and (max-width: 800px) {
+        font-size: 16px;
+      }
+
+      &:hover {
+        color: $text-color-orange;
+      }
+    }
+
+    &-btn {
+      @include flex-center;
+      width: 220px;
+      height: 35px;
+      color: $text-color-orange;
+      background-color: $adr-btn;
+      -webkit-border-radius: 18px;
+      -moz-border-radius: 18px;
+      border-radius: 18px;
+
+      &:hover {
+        background-color: $main-color-focus;
+        color: $text-color-grey;
+      }
+    }
   }
 
   &__map {
     width: 57%;
     height: 100%;
     background-image: url('../images/map.jpg');
+    background-position: 0 0;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @media screen and (max-width: 800px) {
+      width: 50%;
+    }
   }
 
 }
