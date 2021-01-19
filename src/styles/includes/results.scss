@@ -28,15 +28,41 @@
       flex-direction: column;
       @include flex-center;
 
+      @media screen and (max-width: 1160px) {
+        margin: 0 50px;
+      }
+
+      @media screen and (max-width: 1160px) {
+        margin: 0 25px;
+      }
+
       &-title {
+        width: 100%;
+        text-align: center;
         font-size: 46px;
         line-height: 62px;
+
+        @media screen and (max-width: 1160px) {
+          font-size: 36px;
+        }
+
+        @media screen and (max-width: 880px) {
+          font-size: 22px;
+        }
       }
 
       &-descr {
         font-size: 16px;
         line-height: 22px;
         color: $text-color-grey;
+
+        @media screen and (max-width: 1160px) {
+          font-size: 14px;
+        }
+
+        @media screen and (max-width: 880px) {
+          font-size: 12px;
+        }
       }
     }
   }

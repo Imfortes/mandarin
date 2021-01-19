@@ -7,6 +7,7 @@
   flex-direction: column;
   padding-bottom: 50px;
 
+
   &__header {
     margin-top: 30px;
     margin-bottom: 90px;
@@ -32,6 +33,16 @@
       font-size: 22px;
       line-height: 20px;
       font-weight: 400;
+
+      @media screen and (max-width: 870px) {
+        font-size: 20px;
+        text-align: center;
+      }
+
+      @media screen and (max-width: 600px) {
+        font-size: 16px;
+        text-align: center;
+      }
     }
 
     &-list {
@@ -46,15 +57,27 @@
     @include flex-between;
     flex-direction: row;
 
+    @media screen and (max-width: 1000px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
     &-list {
-      height: 470px;
       width: 830px;
       display: flex;
       flex-direction: column;
       justify-content: space-around;
       align-items: flex-start;
 
-      &--checkboxes {
+      @media screen and (max-width: 1160px) {
+        width: 630px;
+      }
+
+      @media screen and (max-width: 1000px) {
+        width: 100%;
+      }
+
+      &-checkboxes {
         @include flex-start;
         flex-wrap: wrap;
 
@@ -90,9 +113,53 @@
         }
       }
 
-      &--inputs {
-        @include flex-start;
+      &-inputs {
+        width: 100%;
+        @include flex-between;
         flex-direction: row;
+
+        @media screen and (max-width: 1180px) {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        &-item {
+
+          @media screen and (max-width: 1180px) {
+            margin-bottom: 25px;
+          }
+
+          & h3 {
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 18px;
+            margin-bottom: 25px;
+          }
+
+          & input[type="range"] {
+            width: 220px;
+
+            @media screen and (max-width: 1180px) {
+              width: 450px;
+            }
+          }
+
+          & .range-list-values {
+            width: 220px;
+            @include flex-between;
+            flex-direction: row;
+
+            @media screen and (max-width: 1180px) {
+              width: 450px;
+            }
+
+            & span {
+              font-size: 12px;
+              line-height: 20px;
+              color: $text-color-grey;
+            }
+          }
+        }
       }
     }
 
@@ -104,6 +171,14 @@
       @include flex-between;
       flex-direction: column;
       align-items: flex-start;
+
+      @media screen and (max-width: 1440px) {
+        margin: 0 0 0 30px;
+      }
+
+      @media screen and (max-width: 1000px) {
+        margin: 30px 0 0 0;
+      }
 
       &-title {
         font-size: 16px;
@@ -141,10 +216,11 @@
 
 // Checkboxes
 
-ul.courses__choose-list li{
+ul.courses__choose-list li {
   display: inline;
 }
-ul.courses__choose-list li label{
+
+ul.courses__choose-list li label {
   border: 1px solid $border-color;
   color: $text-color-grey;
   background-color: $checkbox-color;
@@ -162,6 +238,14 @@ ul.courses__choose-list li label{
 ul.courses__choose-list li label {
   padding: 8px 45px;
   cursor: pointer;
+
+  @media screen and (max-width: 870px) {
+    padding: 8px 30px;
+  }
+
+  @media screen and (max-width: 600px) {
+    padding: 8px 20px;
+  }
 }
 
 ul.courses__choose-list li label::before {
@@ -200,6 +284,7 @@ ul.courses__choose-list li input[type="checkbox"]:focus + label {
   -webkit-border-radius: 21px 0 0 21px;
   -moz-border-radius: 21px 0 0 21px;
   border-radius: 21px 0 0 21px;
+
 }
 
 .japan {
@@ -231,4 +316,66 @@ ul.courses__choose-list li input[type="checkbox"]:focus + label {
 
 .courses__choose-list li:hover label {
   background-color: orange;
+}
+
+
+
+input[type=range] {
+  -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  height: 10px;
+  -webkit-border-radius: 27px;
+  -moz-border-radius: 27px;
+  border-radius: 27px;
+  outline: none;
+  border: 1px solid #D4D4D4;
+  outline: none;
+  background: -webkit-linear-gradient(left, $main-color-active 0%, $main-color-focus 110%);
+}
+
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 18px;
+  width: 18px;
+  background: $main-color-focus;
+  border: 2px solid #F5F5F7;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.18);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+
+/* Тоже самое для Firefox */
+input[type=range]::-moz-range-thumb {
+  height: 18px;
+  width: 18px;
+  background: $main-color-focus;
+  border: 2px solid #F5F5F7;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.18);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+
+/* Тоже самое для IE */
+input[type=range]::-ms-thumb {
+  height: 18px;
+  width: 18px;
+  background: $main-color-focus;
+  border: 2px solid #F5F5F7;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.18);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
 }

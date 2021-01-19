@@ -9,7 +9,6 @@
 
 .footer {
   color: #ffffff;
-  max-width: 1400px;
   margin: 0 auto;
 
   // NAVBAR
@@ -19,10 +18,59 @@
     padding-bottom: 70px;
     @include flex-between;
 
+    @media screen and (max-width: 900px) {
+      flex-wrap: wrap;
+    }
+
+    & a {
+      color: #ffffff;
+      text-decoration: none;
+
+      &:hover {
+        color: $text-color-orange;
+        text-decoration: underline;
+      }
+    }
+
     &-list {
       @include flex-start;
       align-items: flex-start;
       flex-direction: column;
+      height: 280px;
+
+      @media screen and (max-width: 900px) {
+        width: 49%;
+        justify-content: space-between;
+        margin-bottom: 30px;
+
+        &:last-child {
+          justify-content: flex-start;
+        }
+      }
+
+
+
+      &-title {
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: 700;
+        margin-bottom: 30px;
+      }
+
+      &-about {
+        font-size: 13px;
+        line-height: 20px;
+        font-weight: 500;
+        margin-bottom: 30px;
+
+
+      }
+
+      &-other {
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: 700;
+      }
     }
   }
 
@@ -34,6 +82,10 @@
     &-socials {
       @include flex-between;
       flex-direction: row;
+
+      @media screen and (max-width: 870px){
+        flex-direction: column;
+      }
 
       &-list {
         width: 330px;
@@ -61,6 +113,98 @@
           }
         }
       }
+
+      &-feedback {
+        width: 1060px;
+        height: 122px;
+        margin-bottom: 10px;
+        padding: 0 30px;
+        background-color: $footer-soc-item;
+        @include flex-between;
+        flex-direction: row;
+
+        @media screen and (max-width: 1450px) {
+          height: 264px;
+          margin-bottom: 0;
+        }
+
+        @media screen and (max-width: 870px) {
+          width: 100%;
+        }
+
+        &-data {
+          width: 50%;
+          height: 100%;
+          @include flex-start;
+          flex-direction: column;
+          justify-content: center;
+
+          @media screen and (max-width: 870px) {
+            flex-direction: column;
+          }
+
+          & a {
+            color: $text-color-orange;
+            font-size: 16px;
+            line-height: 34px;
+          }
+
+          & span {
+            font-size: 28px;
+            line-height: 36px;
+            color: #ffffff;
+
+            @media screen and (max-width: 1460px) {
+              font-size: 22px;
+            }
+
+            @media screen and (max-width: 1160px) {
+              font-size: 16px;
+            }
+
+            @media screen and (max-width: 870px) {
+              width: 150px;
+            }
+          }
+        }
+
+        &-call {
+          width: 50%;
+          @include flex-end;
+
+          @media screen and (max-width: 600px) {
+
+          }
+
+          & a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 360px;
+            height: 72px;
+            color: $text-color-orange;
+            background-color: $btn-color;
+            -webkit-border-radius: 36px;
+            -moz-border-radius: 36px;
+            border-radius: 36px;
+            -webkit-box-shadow: 0px 0px 10px 5px rgba(240, 134, 4, 0.2);
+            -moz-box-shadow: 0px 0px 10px 5px rgba(240, 134, 4, 0.2);
+            box-shadow: 0px 0px 10px 5px rgba(240, 134, 4, 0.2);
+
+            &:hover {
+              background-color: $main-color-focus;
+              color: #ffffff;
+            }
+
+            @media screen and (max-width: 600px) {
+              font-size: 16px;
+              width: 180px;
+              text-align: center;
+            }
+          }
+        }
+      }
+
     }
   }
 
@@ -72,12 +216,31 @@
     flex-direction: row;
     margin-bottom: 40px;
 
+    @media screen and (max-width: 870px) {
+      flex-direction: column;
+    }
+
     & a {
       @include flex-center;
       width: 330px;
       height: 50px;
       color: #ffffff;
       text-decoration: none;
+
+      @media screen and (max-width: 1450px) {
+        width: 250px;
+      }
+
+      @media screen and (max-width: 1150px) {
+        width: 150px;
+        font-size: 12px;
+      }
+
+      @media screen and (max-width: 870px) {
+        margin-top: 15px;
+        width: 330px;
+      }
+
       &:hover {
         color: $text-color-orange;
         text-decoration: underline;
@@ -102,5 +265,15 @@
   &__copyright {
     @include flex-between;
     flex-direction: row;
+
+    @media screen and (max-width: 870px) {
+      flex-direction: column;
+
+      & span {
+        margin-top: 15px;
+      }
+    }
+
+
   }
 }

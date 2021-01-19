@@ -22,11 +22,35 @@
     flex-direction: row;
     flex-wrap: wrap;
 
+    @media screen and (max-width: 1140px) {
+      width: 720px;
+    }
+
+    @media screen and (max-width: 900px) {
+      width: 520px;
+    }
+
+    @media screen and (max-width: 600px) {
+      width: 400px;
+    }
+
     &-item {
       width: 45%;
+      height: 100px;
       @include flex-start;
+      align-items: center;
       flex-direction: row;
       margin-bottom: 100px;
+
+      & img {
+        width: 80px;
+        height: 80px;
+
+        @media screen and (max-width: 900px) {
+          width: 60px;
+          height: 60px;
+        }
+      }
 
       &-description {
         width: 325px;
@@ -40,6 +64,10 @@
           font-size: 16px;
           line-height: 22px;
           font-weight: 400;
+
+          @media screen and (max-width: 900px) {
+            font-size: 14px;
+          }
         }
 
         & span {
@@ -47,6 +75,10 @@
           line-height: 22px;
           font-weight: 400;
           color: $text-color-grey;
+
+          @media screen and (max-width: 900px) {
+            font-size: 12px;
+          }
         }
       }
     }
